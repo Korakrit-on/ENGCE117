@@ -10,7 +10,7 @@ void GetMatrix(int **value, int *row, int *col) {
     int i, j;
 
     
-    printf("How many row, col ? ");
+    printf("How many row, col ? \n");
     scanf("%d %d", row, col);
 
     //Point the main variable to our array
