@@ -3,10 +3,10 @@
 int matrix[1000];
 
 /* * Function Definition 
- * We use 'int **value' because main passes '&data' (a pointer to a pointer)
+ * We use 'int **value' (a pointer to a pointer)
  */
 void GetMatrix(int **value, int *row, int *col) {
-    /* Declare variables at the top (Strict C89 Rule) */
+    // Declare variables at the top
     int i, j;
 
     
