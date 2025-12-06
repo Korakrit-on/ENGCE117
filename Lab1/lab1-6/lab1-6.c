@@ -24,7 +24,7 @@ int GetMatrix(int **value, int *row, int *col) {
             // Prompt: a[0][0]
             printf("a[%d][%d] = ", i, j);
             
-            // Calculate index safely 
+            // Calculate
             scanf("%d", &matrix[i * (*col) + j]);
         }
     }
@@ -40,7 +40,6 @@ int main() {
     /* The main function ignores the return value, so 'int' works fine here */
     GetMatrix(&data, &m, &n);
 
-    /* Print result for video verification */
     printf("\nMatrix:\n");
     for (i = 0; i < m; i++) {
         for (j = 0; j < n; j++) {
