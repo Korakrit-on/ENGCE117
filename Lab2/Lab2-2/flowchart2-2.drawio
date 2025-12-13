@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="C_InPlace_Reverse_Flowchart">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="lbl_main" value="MAIN FUNCTION" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="150" y="50" width="160" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_start" value="Start Main" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="170" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_init" value="char text[50]=&quot;I Love You&quot;&#xa;char *out;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_call" value="out = reverse(text)&#xa;(Modifies text in place)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="160" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_print" value="printf(&quot;%s\n&quot;, out)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="160" y="400" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_end" value="End Main / return 0" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="170" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="me1" edge="1" parent="1" source="m_start" target="m_init"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="me2" edge="1" parent="1" source="m_init" target="m_call"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="me3" edge="1" parent="1" source="m_call" target="m_print"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="me4" edge="1" parent="1" source="m_print" target="m_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+
+        <mxCell id="lbl_rev" value="SUBROUTINE: char* reverse(char str1[])" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="550" y="50" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_start" value="Start reverse&#xa;(Input str1 pointer)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_vars" value="len = strlen(str1)&#xa;char temp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="640" y="190" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_init_i" value="int i = 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="640" y="270" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_cond" value="i &lt; len / 2 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="630" y="350" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_swap1" value="1. temp = str1[i]&#xa;(Save front)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="460" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_swap2" value="2. str1[i] = &#xa;str1[len - 1 - i]&#xa;(Back to front)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="530" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_swap3" value="3. str1[len - 1 - i] = &#xa;temp&#xa;(Saved front to back)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="610" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_inc_i" value="i++" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="640" y="700" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_end" value="Return str1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="840" y="360" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="re1" edge="1" parent="1" source="r_start" target="r_vars"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re2" edge="1" parent="1" source="r_vars" target="r_init_i"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re3" edge="1" parent="1" source="r_init_i" target="r_cond"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re4" value="Yes" edge="1" parent="1" source="r_cond" target="r_swap1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re5" edge="1" parent="1" source="r_swap1" target="r_swap2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re6" edge="1" parent="1" source="r_swap2" target="r_swap3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re7" edge="1" parent="1" source="r_swap3" target="r_inc_i"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="re8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0;entryY=0.5;" edge="1" parent="1" source="r_inc_i" target="r_cond">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="725" />
+              <mxPoint x="580" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re9" value="No" edge="1" parent="1" source="r_cond" target="r_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="sep" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="750" as="sourcePoint" />
+            <mxPoint x="450" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
